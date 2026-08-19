@@ -1,4 +1,9 @@
 package entities;
 
-public class Patient {
+public class Patient extends Person {
+
+
+    public Patient(String id, String firstName, String lastName, String dateOfBirth, String gender, String phoneNumber, String email, String address, String nationalId, int age, boolean activeStatus) {
+        super(id, firstName, lastName, dateOfBirth, gender, phoneNumber, email, address, nationalId, age, activeStatus);
+    }
 }

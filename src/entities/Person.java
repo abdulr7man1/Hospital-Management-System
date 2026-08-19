@@ -3,6 +3,8 @@ package entities;
 import interfaces.Displayable;
 import utils.HelperUtils;
 
+import java.util.Objects;
+
 public class Person implements Displayable {
     private String id;
     private String firstName;
@@ -170,4 +172,47 @@ public class Person implements Displayable {
     public void setActiveStatus(boolean activeStatus) {
         this.activeStatus = activeStatus;
     }
+    public String getFullName(){
+        return firstName + " " + lastName;
+    }
+    public void displayInfo() {
+
+        System.out.println("----- Person -----");
+        System.out.println("Id           : " + id);
+        System.out.println("Name         : " + getFullName());
+        System.out.println("Date of birth: " + dateOfBirth);
+        System.out.println("Gender       : " + gender);
+        System.out.println("Phone        : " + phoneNumber);
+        System.out.println("Email        : " + email);
+        System.out.println("Address      : " + address);
+        System.out.println("National id  : " + nationalId);
+        System.out.println("Age          : " + age);
+        System.out.println("Active       : " + activeStatus);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", nationalId='" + nationalId + '\'' +
+                ", age=" + age +
+                ", activeStatus=" + activeStatus +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(id, person.id);
+    }
+
+
 }
