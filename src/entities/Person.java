@@ -15,4 +15,22 @@ public class Person implements Displayable {
     private int age;
     private boolean activeStatus;
 
+
+    public Person(String id, String firstName, String lastName, String dateOfBirth, String gender,
+                  String phoneNumber, String email, String address,
+                  String nationalId, int age, boolean activeStatus) {
+
+        setID(id);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setDateOfBirth(dateOfBirth);
+        setGender(gender);
+        setPhoneNumber(phoneNumber);
+        setEmail(email);
+        setAddress(address);
+        setNationalId(nationalId);
+        setAge(age);
+        this.activeStatus = activeStatus;
+    }
+
 }
